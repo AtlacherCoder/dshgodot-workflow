@@ -1,0 +1,12 @@
+# dsh-godot-workflow bundle patch: mounts the plugin into a dsh profile's host
+# composition. On activation the plugin
+#   1. injects the condensed workflow core (`.dsh/prompt/core.md`) as an
+#      always-on system-prompt section, and
+#   2. registers the full workflow (`.dsh/skills/godot-workflow/SKILL.md`) as a
+#      runtime skill loadable with the `skill` tool.
+#
+# 本地安装（link: 指向本目录）：
+#   dsh plugin --profile web add link:/home/atlaslinux/PluginManager/dsh-godot-workflow
+- insert:
+    - id: godot-workflow
+      name: dsh-godot-workflow

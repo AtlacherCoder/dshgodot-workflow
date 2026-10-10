@@ -1,0 +1,42 @@
+{
+  "name": "dsh-godot-workflow",
+  "version": "1.0.0",
+  "description": "Godot 工程开发工作流的本地 DSH 插件：把精简核心常驻注入系统提示（不占 AGENTS.md 字节预算），完整版注册为按需加载的 godot-workflow 技能。",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "cordis.patch.yml",
+    ".dsh/prompt/core.md",
+    ".dsh/skills/godot-workflow/SKILL.md",
+    "scripts",
+    "README.md"
+  ],
+  "scripts": {
+    "verify": "node scripts/verify.mjs",
+    "smoke": "node scripts/smoke.mjs",
+    "check": "node scripts/verify.mjs && node scripts/smoke.mjs"
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "godot",
+    "workflow",
+    "instructions"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "license": "MIT",
+  "private": true,
+  "engines": {
+    "node": ">=20"
+  }
+}
